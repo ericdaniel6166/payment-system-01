@@ -1,5 +1,13 @@
 # payment-system-01
 
+## Prerequisite
+
+- Java 17
+- Maven
+- Docker
+- GNU Make
+- WSL (if using Windows)
+
 ## Setup
 - Repositories
     - payment-system-01: https://github.com/ericdaniel6166/payment-system-01
@@ -16,4 +24,14 @@
 ├── payment-service-01
 ├── sales-channel-service-01
 └── channel-sync-service-01
+```
+
+## Running the app
+
+```bash
+
+## Maven build
+make maven-install
+
+
 ```
