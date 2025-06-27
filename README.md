@@ -29,9 +29,19 @@
 ## Running the app
 
 ```bash
+## Docker Hub login
+docker login -u <username> ## ex: docker login -u john
 
-## Maven build
+## Builds all modules
 make maven-install
 
+## Builds docker images
+make docker-build
+
+## Builds docker images
+make docker-tag USER=<username> ## ex: make docker-tag USER=john
+
+## Pushes docker images to Docker Hub
+make docker-push USER=<username> ## ex: make docker-push USER=john
 
 ```
