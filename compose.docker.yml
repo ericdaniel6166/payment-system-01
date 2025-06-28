@@ -1,0 +1,42 @@
+#version: '3.9'
+services:
+  payment-service-01:
+    container_name: payment-service-01
+    build:
+      context: ../payment-service-01
+      dockerfile: Dockerfile
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "5001:5001"
+    expose:
+      - "5001"
+    networks:
+      - internal-network
+#  channel-sync-service-01:
+#    container_name: channel-sync-service-01
+#    build:
+#      context: ../channel-sync-service-01
+#      dockerfile: Dockerfile
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
+#    ports:
+#      - "5003:5003"
+#    expose:
+#      - "5003"
+#    networks:
+#      - internal-network
+
+
+networks:
+  internal-network:
+
+#volumes:
+#  postgres-keycloak-data:
+#  postgres-inventory-data:
+#  postgres-user-data:
+#  cache-data:
+#  postgres-order-data:
+#  postgres-payment-data:
+#  activemq-data:
+#  activemq-log:

@@ -45,3 +45,10 @@ make docker-tag USER=<username> ## ex: make docker-tag USER=john
 make docker-push USER=<username> ## ex: make docker-push USER=john
 
 ```
+
+## Delete/clean the app
+
+```bash
+make docker-image-rm
+```
+

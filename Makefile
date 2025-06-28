@@ -66,8 +66,17 @@ docker-push:
 	@echo "\n✅  All images pushed to $(if $(REGISTRY),$(REGISTRY), Docker Hub) under ‘$(USER)’ with tag ‘$(TAG)’"
 # --------------------------------------------------------------------
 
-docker-image-rm:
+docker-image-rm-01:
 	docker image ls --filter "reference=*-01" -q | xargs -r docker image rm
+
+docker-image-rm:
+	@for pattern in ${SERVICES}; do \
+		echo "Checking for images matching pattern: $$pattern"; \
+		if docker images | grep -E "$$pattern"; then \
+		  echo "Removing images matching pattern: $$pattern"; \
+		  docker rmi -f $$(docker images | grep "$$pattern" | awk '{print $$3}' | sort -u); \
+		fi \
+	done
 
 docker-up:
 	docker compose -f ./compose.docker.yml up -d
