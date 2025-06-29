@@ -11,7 +11,6 @@
 ## Setup
 - Repositories
     - payment-system-01: https://github.com/ericdaniel6166/payment-system-01
-    - starter-service-01: https://github.com/ericdaniel6166/starter-service-01
     - payment-service-01: https://github.com/ericdaniel6166/payment-service-01
     - sales-channel-service-01: https://github.com/ericdaniel6166/sales-channel-service-01
     - channel-sync-service-01: https://github.com/ericdaniel6166/channel-sync-service-01
@@ -20,7 +19,6 @@
 ```bash
 .
 ├── payment-system-01
-├── starter-service-01
 ├── payment-service-01
 ├── sales-channel-service-01
 └── channel-sync-service-01
@@ -31,6 +29,12 @@
 ```bash
 ## Docker Hub login
 docker login -u <username> ## ex: docker login -u john
+
+```
+
+## Other Commands
+
+```bash
 
 ## Builds all modules
 make maven-install
